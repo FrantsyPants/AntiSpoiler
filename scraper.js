@@ -1,6 +1,7 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
-const siteUrl = "https://themoviespoiler.com/movies/birds-of-prey/";
+const movie = "bad-boys-for-life";
+const siteUrl = "https://themoviespoiler.com/movies/" + movie + "/";
 let siteName = "";
 const categories = new Set();
 const fetchData = async () => {
@@ -9,7 +10,7 @@ const fetchData = async () => {
 };
 const getResults = async () => {
     const $ = await fetchData();
-    siteName = $('entry-title').text();
+    siteName = $('.entry-title').text();
     $(".entry-content>p").each((index, element) => {
       categories.add($(element).text());
     });
