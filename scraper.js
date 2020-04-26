@@ -1,6 +1,6 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
-const movie = "bad-boys-for-life";
+const movie = "extraction";
 const siteUrl = "https://themoviespoiler.com/movies/" + movie + "/";
 let siteName = "";
 const categories = new Set();
